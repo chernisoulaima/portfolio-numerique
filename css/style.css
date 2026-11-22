@@ -395,6 +395,12 @@ tbody tr:hover { background: color-mix(in srgb, var(--accent) 5%, transparent); 
 .play-icon svg { width: 20px; height: 20px; margin-left: 3px; }
 audio { width: 100%; height: 40px; }
 
+/* Captures et illustrations */
+.shot { margin: .6rem 0 0; }
+.shot img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--navy); }
+.shot a { display: block; }
+.shot figcaption { font-size: .8rem; color: var(--ink-mute); margin-top: .4rem; }
+
 /* Lecteur vidéo + playlist */
 .video-panel { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 1.4rem; padding: 1.2rem; }
 .video-main .video-frame { border-radius: 12px; }

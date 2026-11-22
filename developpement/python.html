@@ -6,6 +6,10 @@
   <title>Python — Soulaima</title>
   <meta name="description" content="Les bases de la programmation en Python — variables, types, conditions, boucles, listes et fonctions — illustrées par trois mini-projets.">
   <meta name="theme-color" content="#0b1b34">
+  <link rel="icon" href="../medias/images/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Python — Soulaima">
+  <meta property="og:description" content="Les bases de la programmation en Python — variables, types, conditions, boucles, listes et fonctions — illustrées par trois mini-projets.">
+  <meta property="og:image" content="../medias/images/og-image.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -122,10 +126,7 @@ b = float(input(&quot;Deuxième nombre : &quot;))
 op = input(&quot;Opération (+ - * /) : &quot;)
 print(&quot;Résultat :&quot;, calculer(a, b, op))</code></pre>
         <p><strong>Fonctionnement :</strong> La fonction <code>calculer</code> teste l'opérateur avec <code>if/elif</code> et renvoie le résultat. Les saisies sont converties en <code>float</code> pour accepter les décimaux.</p>
-        <p><strong>Exécution :</strong></p><pre><code>Premier nombre : 12
-Deuxième nombre : 0
-Opération (+ - * /) : /
-Résultat : Erreur : division par zéro</code></pre>
+        <p><strong>Capture de l'exécution :</strong></p><figure class="shot"><img src="../medias/images/python-calculatrice.svg" alt="Capture du terminal : exécution de 1. Calculatrice" loading="lazy" width="800"></figure>
         <p class="note"><strong>Difficultés et solutions :</strong> Au début j'avais oublié de convertir <code>input()</code> : <code>"12" + "3"</code> donnait <code>"123"</code>. Solution : <code>float(input(...))</code>.</p>
       </article>
       <article class="card" style="margin-bottom:1.2rem">
@@ -148,12 +149,7 @@ while not trouve:
         trouve = True
         print(f&quot;Bravo, trouvé en {essais} essais !&quot;)</code></pre>
         <p><strong>Fonctionnement :</strong> <code>random.randint</code> tire le nombre secret. La boucle <code>while</code> continue tant que le nombre n'est pas trouvé ; un compteur mémorise le nombre d'essais.</p>
-        <p><strong>Exécution :</strong></p><pre><code>Ton nombre : 50
-C&#x27;est plus petit !
-Ton nombre : 25
-C&#x27;est plus grand !
-Ton nombre : 37
-Bravo, trouvé en 3 essais !</code></pre>
+        <p><strong>Capture de l'exécution :</strong></p><figure class="shot"><img src="../medias/images/python-devinette.svg" alt="Capture du terminal : exécution de 2. Jeu du nombre mystère" loading="lazy" width="800"></figure>
         <p class="note"><strong>Difficultés et solutions :</strong> Le programme plantait si on tapait une lettre (<code>ValueError</code>). Amélioration possible : un bloc <code>try/except</code>.</p>
       </article>
       <article class="card" style="margin-bottom:1.2rem">
@@ -175,14 +171,7 @@ if notes:
     print(f&quot;Meilleure matière : {meilleure} ({notes[meilleure]})&quot;)
     print(f&quot;À travailler : {pire} ({notes[pire]})&quot;)</code></pre>
         <p><strong>Fonctionnement :</strong> Un dictionnaire associe chaque matière à sa note. <code>sum</code>, <code>max</code> et <code>min</code> avec <code>key=notes.get</code> calculent les statistiques.</p>
-        <p><strong>Exécution :</strong></p><pre><code>Matière (vide pour terminer) : Python
-Note sur 20 : 16
-Matière (vide pour terminer) : C
-Note sur 20 : 12
-Matière (vide pour terminer) :
-Moyenne : 14.00
-Meilleure matière : Python (16.0)
-À travailler : C (12.0)</code></pre>
+        <p><strong>Capture de l'exécution :</strong></p><figure class="shot"><img src="../medias/images/python-notes.svg" alt="Capture du terminal : exécution de 3. Gestionnaire de notes" loading="lazy" width="800"></figure>
         <p class="note"><strong>Difficultés et solutions :</strong> Division par zéro si aucune note n'est saisie → ajout du test <code>if notes:</code>.</p>
       </article>
     </section>

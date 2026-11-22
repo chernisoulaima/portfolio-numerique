@@ -6,6 +6,10 @@
   <title>Prompt engineering — Soulaima</title>
   <meta name="description" content="Apprendre à formuler des demandes précises pour obtenir de meilleurs résultats d'une IA : rôle, contexte, tâche, format, contraintes et exemples.">
   <meta name="theme-color" content="#0b1b34">
+  <link rel="icon" href="../medias/images/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Prompt engineering — Soulaima">
+  <meta property="og:description" content="Apprendre à formuler des demandes précises pour obtenir de meilleurs résultats d'une IA : rôle, contexte, tâche, format, contraintes et exemples.">
+  <meta property="og:image" content="../medias/images/og-image.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -115,7 +119,7 @@
       <article class="card prompt-case">
         <h3 style="margin-top:0">Cas 1 — Comprendre les pointeurs en C</h3>
         <div class="prompt-step"><strong class="prompt-weak">Prompt initial (faible)</strong><div><pre><code>Explique les pointeurs.</code></pre></div></div>
-        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Une définition générale et abstraite, avec un exemple trop avancé (pointeurs de fonctions). <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas1-avant.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Une définition générale et abstraite, avec un exemple trop avancé (pointeurs de fonctions). <figure class="shot"><img src="../medias/images/prompt-cas1-avant.svg" alt="Résultat du prompt (avant) — cas 1" loading="lazy" width="800" height="470"></figure></div></div>
         <div class="prompt-step"><strong class="prompt-good">Prompt amélioré</strong><div><pre data-copy><code>Tu es un professeur de langage C patient.
 Je suis étudiante en 1ère année et je bloque sur les pointeurs.
 Explique ce qu'est un pointeur en 3 étapes :
@@ -123,29 +127,29 @@ Explique ce qu'est un pointeur en 3 étapes :
 2) un exemple de code C de 10 lignes maximum, commenté ligne par ligne,
 3) deux erreurs fréquentes à éviter.
 Utilise un vocabulaire simple et termine par une question pour vérifier que j'ai compris.</code></pre></div></div>
-        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Une analogie (l'adresse d'une maison), un code court avec <code>&amp;</code> et <code>*</code> commenté, les erreurs « pointeur non initialisé » et « oubli de * ». <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas1-apres.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Une analogie (l'adresse d'une maison), un code court avec <code>&amp;</code> et <code>*</code> commenté, les erreurs « pointeur non initialisé » et « oubli de * ». <figure class="shot"><img src="../medias/images/prompt-cas1-apres.svg" alt="Résultat du prompt (apres) — cas 1" loading="lazy" width="800" height="470"></figure></div></div>
         <div class="prompt-step"><strong>Analyse</strong><div>Le rôle et le contexte ont adapté le niveau ; le format en 3 étapes a rendu la réponse structurée ; la contrainte « 10 lignes » a évité un exemple trop complexe.</div></div>
       </article>
       <article class="card prompt-case">
         <h3 style="margin-top:0">Cas 2 — Préparer une fiche de révision</h3>
         <div class="prompt-step"><strong class="prompt-weak">Prompt initial (faible)</strong><div><pre><code>Fais-moi une fiche sur les systèmes d'exploitation.</code></pre></div></div>
-        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Un long texte sans hiérarchie, difficile à réviser. <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas2-avant.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Un long texte sans hiérarchie, difficile à réviser. <figure class="shot"><img src="../medias/images/prompt-cas2-avant.svg" alt="Résultat du prompt (avant) — cas 2" loading="lazy" width="800" height="470"></figure></div></div>
         <div class="prompt-step"><strong class="prompt-good">Prompt amélioré</strong><div><pre data-copy><code>Rôle : tu es un tuteur qui prépare des fiches de révision.
 Contexte : examen de 1ère année sur les systèmes d'exploitation.
 Tâche : rédige une fiche sur les 4 rôles d'un OS (processus, mémoire, fichiers, périphériques).
 Format : un tableau (rôle | définition | exemple concret), puis 5 questions de type QCM avec la correction à la fin.
 Contraintes : une page maximum, définitions de 2 lignes.</code></pre></div></div>
-        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Un tableau clair de 4 lignes et un QCM corrigé, directement utilisable. <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas2-apres.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Un tableau clair de 4 lignes et un QCM corrigé, directement utilisable. <figure class="shot"><img src="../medias/images/prompt-cas2-apres.svg" alt="Résultat du prompt (apres) — cas 2" loading="lazy" width="800" height="470"></figure></div></div>
         <div class="prompt-step"><strong>Analyse</strong><div>Préciser le format (tableau + QCM) a transformé un texte en outil de révision. Mettre la correction à la fin permet de s'auto-tester.</div></div>
       </article>
       <article class="card prompt-case">
         <h3 style="margin-top:0">Cas 3 — Comparer les outils sur une recherche sourcée</h3>
         <div class="prompt-step"><strong class="prompt-weak">Prompt initial (faible)</strong><div><pre><code>C'est quoi le phishing ?</code></pre></div></div>
-        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Claude et ChatGPT : définition correcte mais sans source. Perplexity : définition avec liens. <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas3-avant.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Claude et ChatGPT : définition correcte mais sans source. Perplexity : définition avec liens. <figure class="shot"><img src="../medias/images/prompt-cas3-avant.svg" alt="Résultat du prompt (avant) — cas 3" loading="lazy" width="800" height="470"></figure></div></div>
         <div class="prompt-step"><strong class="prompt-good">Prompt amélioré</strong><div><pre data-copy><code>Explique ce qu'est l'hameçonnage (phishing) pour un public étudiant.
 Donne 3 exemples concrets récents, et pour chaque affirmation cite une source officielle (ANSSI, Cybermalveillance.gouv.fr).
 Si tu n'es pas certain d'une information, dis-le explicitement.</code></pre></div></div>
-        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Perplexity fournit les liens officiels ; Claude signale ce qu'il ne peut pas vérifier ; ChatGPT donne des exemples mais une source était invalide → vérifiée et retirée. <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas3-apres.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Perplexity fournit les liens officiels ; Claude signale ce qu'il ne peut pas vérifier ; ChatGPT donne des exemples mais une source était invalide → vérifiée et retirée. <figure class="shot"><img src="../medias/images/prompt-cas3-apres.svg" alt="Résultat du prompt (apres) — cas 3" loading="lazy" width="800" height="470"></figure></div></div>
         <div class="prompt-step"><strong>Analyse</strong><div>Demander des sources et l'aveu d'incertitude rend les erreurs visibles. Comparer plusieurs outils montre qu'il faut toujours vérifier soi-même.</div></div>
       </article>
       <h3>Bibliothèque de prompts réutilisables</h3>
