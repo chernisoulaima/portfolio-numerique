@@ -402,6 +402,12 @@ audio { width: 100%; height: 40px; }
 .yt-fallback-label { position: absolute; left: 50%; bottom: 14%; transform: translateX(-50%); font-weight: 600; font-size: .9rem; background: rgba(0,0,0,.55); padding: .35rem .8rem; border-radius: 999px; white-space: nowrap; }
 .video-frame:has(.yt-fallback) { padding: 0; }
 
+/* Statut des productions */
+.status { display: inline-block; font-size: .74rem; font-weight: 700; padding: .2rem .6rem; border-radius: 999px; white-space: nowrap; letter-spacing: .02em; }
+.status-ok { color: var(--ok); background: color-mix(in srgb, var(--ok) 13%, transparent); }
+.status-plan { color: var(--warn); background: color-mix(in srgb, var(--warn) 15%, transparent); }
+:root[data-theme="dark"] .status-plan { color: var(--sys); }
+
 /* Script vidéo */
 .script-box { margin-top: 1.2rem; padding: 0; overflow: hidden; }
 .script-box summary { display: flex; align-items: center; gap: .8rem; padding: 1.1rem 1.4rem; cursor: pointer; list-style: none; }
