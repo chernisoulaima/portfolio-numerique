@@ -330,7 +330,12 @@
   /* ---------- 9. Audios : message si le fichier n'existe pas encore ---------- */
   $$("audio[data-src]").forEach(a => {
     const msg = a.nextElementSibling && a.nextElementSibling.classList.contains("media-missing") ? a.nextElementSibling : null;
-    a.addEventListener("error", () => { a.hidden = true; if (msg) msg.hidden = false; }, true);
+    a.addEventListener("error", () => {
+      a.hidden = true;
+      if (msg) msg.hidden = false;
+      const tts = a.closest(".media-card") && a.closest(".media-card").querySelector(".tts-controls");
+      if (tts) tts.hidden = false;   // secours : voix du navigateur
+    }, true);
     a.src = a.dataset.src;
   });
 
