@@ -1,7 +1,8 @@
 # Portfolio numérique — Soulaima
 
 **Étudiante :** Soulaima — 1ère année, Technologie de l'Informatique — ISET Nabeul
-**Site en ligne :** `https://<utilisateur>.github.io/portfolio-numerique/` *(à compléter après publication)*
+**Dépôt :** https://github.com/chernisoulaima/portfolio-numerique  
+**Site en ligne :** https://chernisoulaima.github.io/portfolio-numerique/
 
 ## Objectif du projet
 
@@ -72,7 +73,6 @@ python outils/generer_audio.py --moteur edge
 
 > ⚠️ Ne publie jamais la clé API sur GitHub. Elle reste dans la variable d'environnement.
 
-**Google Classroom** : remplace `https://classroom.google.com/` par le lien de ta classe (`https://classroom.google.com/c/…`) dans les boutons « Ouvrir la classe ».
 
 ## Publier sur GitHub Pages
 
@@ -81,7 +81,7 @@ git init
 git add .
 git commit -m "Portfolio numérique"
 git branch -M main
-git remote add origin https://github.com/<utilisateur>/portfolio-numerique.git
+git remote add origin https://github.com/chernisoulaima/portfolio-numerique.git
 git push -u origin main
 ```
 
