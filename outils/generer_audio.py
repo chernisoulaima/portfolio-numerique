@@ -22,6 +22,11 @@ Utilisation (depuis la racine du site)
     python outils/generer_audio.py --liste      # voir les pages trouvées
 
 Aucune bibliothèque à installer : uniquement la bibliothèque standard Python.
+
+Moteur gratuit sans clé (voix neuronales Microsoft Edge)
+--------------------------------------------------------
+    pip install edge-tts
+    python outils/generer_audio.py --moteur edge
 """
 import base64
 import json
@@ -41,6 +46,34 @@ VOIX_ANIMATRICE = "fr-FR-Neural2-A"   # voix féminine
 VOIX_EXPERT = "fr-FR-Neural2-B"       # voix masculine
 VOIX_VOCAL = "fr-FR-Neural2-A"
 LIMITE_OCTETS = 4500                  # l'API accepte 5000 octets par requête
+
+# Équivalents pour le moteur « edge » (gratuit, sans clé)
+VOIX_EDGE = {
+    VOIX_ANIMATRICE: "fr-FR-DeniseNeural",
+    VOIX_EXPERT: "fr-FR-HenriNeural",
+}
+MOTEUR = "google"
+
+
+def synthetiser_edge(texte, voix):
+    """Synthèse avec edge-tts (pip install edge-tts) ; renvoie les octets MP3."""
+    import asyncio
+    import edge_tts
+
+    async def run():
+        audio = b""
+        com = edge_tts.Communicate(texte, VOIX_EDGE.get(voix, "fr-FR-DeniseNeural"), rate="+0%")
+        async for morceau in com.stream():
+            if morceau["type"] == "audio":
+                audio += morceau["data"]
+        return audio
+
+    for essai in range(3):
+        try:
+            return asyncio.run(run())
+        except Exception as e:  # coupure réseau : on réessaie
+            if essai == 2:
+                sys.exit(f"Erreur edge-tts : {e}")
 
 
 class LecteurResume(HTMLParser):
@@ -131,6 +164,8 @@ def decouper(texte, limite=LIMITE_OCTETS):
 
 def synthetiser(texte, voix, cle):
     """Appelle l'API Text-to-Speech et renvoie les octets MP3."""
+    if MOTEUR == "edge":
+        return synthetiser_edge(texte, voix)
     audio = b""
     for morceau in decouper(texte):
         corps = json.dumps({
@@ -195,7 +230,7 @@ def main():
         for p in pages:
             print(p.relative_to(RACINE))
         return
-    noms = [a for a in args if not a.startswith("--")]
+    noms = [a for a in args if not a.startswith("--") and a not in ("edge", "google")]
     if noms:
         pages = [p for p in pages if p.stem in noms]
         if not pages:
@@ -212,8 +247,11 @@ def main():
                     print(f"[{titre or 'Intro'}] " + " ".join(contenu))
         return
 
-    cle = os.environ.get("GOOGLE_TTS_API_KEY")
-    if not cle:
+    global MOTEUR
+    if "--moteur" in args and args[args.index("--moteur") + 1:][:1] == ["edge"]:
+        MOTEUR = "edge"
+    cle = os.environ.get("GOOGLE_TTS_API_KEY", "")
+    if MOTEUR == "google" and not cle:
         sys.exit("Variable GOOGLE_TTS_API_KEY absente. Voir les instructions en haut du fichier.")
 
     for page in pages:
