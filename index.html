@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soulaima — Portfolio numérique</title>
+  <meta name="description" content="Portfolio numérique de Soulaima : résumés de cours, cartes mentales, podcasts et vidéos pour chaque module de 1ère année.">
+  <meta name="theme-color" content="#0b1b34">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S</span><span>Soulaima<small>Portfolio numérique</small></span></a>
+    <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li class="nav-group"><span tabindex="0">Digital Skills</span>
+          <ul>
+            <li><a href="digital-skills/cybersecurite.html">Cybersécurité</a></li>
+            <li><a href="digital-skills/prompt-engineering.html">Prompt engineering</a></li>
+            <li><a href="digital-skills/creation-contenu.html">Création de contenu</a></li>
+          </ul>
+        </li>
+        <li class="nav-group"><span tabindex="0">Développement</span>
+          <ul>
+            <li><a href="developpement/python.html">Python</a></li>
+            <li><a href="developpement/langage-c.html">Langage C</a></li>
+            <li><a href="developpement/algorithmique.html">Algorithmique</a></li>
+          </ul>
+        </li>
+        <li class="nav-group"><span tabindex="0">Systèmes</span>
+          <ul>
+            <li><a href="systemes/systemes-exploitation.html">Systèmes d'exploitation</a></li>
+            <li><a href="systemes/architecture-electronique.html">Architecture &amp; électronique</a></li>
+          </ul>
+        </li>
+        <li><a href="web/developpement-web.html">Web</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Activer le mode sombre"></button>
+    <button id="menu-toggle" class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu"></button>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge"><span class="dot"></span>Portfolio numérique · Année 2026–2027</span>
+        <h1>Apprendre, comprendre,<br><span class="accent-text">et le prouver</span> en <span class="rotator" data-words="cybersécurité|Python|langage C|algorithmique|architecture|développement web">cybersécurité</span>.</h1>
+        <p class="lead">Je suis <strong style="color:#fff">Soulaima</strong>, étudiante en 1ère année <em>[filière à compléter]</em>. Ce portfolio rassemble mes réalisations dans chaque unité d'enseignement : résumés, cartes mentales, podcasts, vidéos et projets de code.</p>
+        <div class="btn-row">
+          <a class="btn btn-light" href="#modules">Découvrir les modules <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-outline-light" href="#classroom">Google Classroom</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b data-count="9">9</b><span>modules documentés</span></div>
+          <div class="stat"><b data-count="9">9</b><span>cartes mentales</span></div>
+          <div class="stat"><b data-count="33">33</b><span>questions de quiz</span></div>
+          <div class="stat"><b data-count="18">18</b><span>podcasts et vocaux</span></div>
+        </div>
+      </div>
+      <aside class="profile-card" aria-label="Profil">
+        <div class="profile-head">
+          <div class="avatar" role="img" aria-label="Avatar de Soulaima">S</div>
+          <div><strong>Soulaima</strong><span>Étudiante · 1ère année</span></div>
+        </div>
+        <ul class="profile-list">
+          <li><span>Filière</span><b>[à compléter]</b></li>
+          <li><span>Établissement</span><b>[à compléter]</b></li>
+          <li><span>Unités d'enseignement</span><b>4</b></li>
+          <li><span>Compétences</span><b>Python · C · Web · Réseaux</b></li>
+          <li><span>Outils</span><b>VS Code · Git · Canva</b></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="home-section" id="modules">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Unités d'enseignement</p>
+          <h2>Mes modules</h2>
+          <p>Chaque fiche réunit un résumé, une carte mentale, un podcast, une vidéo et un quiz.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrer les modules">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Tous</button>
+          <button class="filter-btn" type="button" data-filter="digital" aria-pressed="false">Digital Skills</button>
+          <button class="filter-btn" type="button" data-filter="dev" aria-pressed="false">Développement</button>
+          <button class="filter-btn" type="button" data-filter="sys" aria-pressed="false">Systèmes</button>
+          <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web</button>
+        </div>
+      </div>
+      <div class="grid-3">
+        <a class="module-card" data-module="digital" href="digital-skills/cybersecurite.html">
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <span class="eyebrow">Digital Skills</span>
+          <h3>Cybersécurité</h3>
+          <p>Malwares, phishing, bonnes pratiques et checklist « Suis-je bien protégé ? ».</p>
+          <span class="module-foot">
+            <span class="chips"><span class="chip">Résumé</span><span class="chip">Carte</span><span class="chip">Podcast</span><span class="chip">Vidéo</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </span>
+        </a>
+        <a class="module-card" data-module="digital" href="digital-skills/prompt-engineering.html">
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
+          <span class="eyebrow">Digital Skills</span>
+          <h3>Prompt engineering</h3>
+          <p>Rôle, contexte, tâche, format : 3 cas pratiques et une bibliothèque de prompts.</p>
+          <span class="module-foot">
+            <span class="chips"><span class="chip">Résumé</span><span class="chip">Carte</span><span class="chip">Podcast</span><span class="chip">Vidéo</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </span>
+        </a>
+        <a class="module-card" data-module="digital" href="digital-skills/creation-contenu.html">
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="13" height="14" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></span>
+          <span class="eyebrow">Digital Skills</span>
+          <h3>Création de contenu</h3>
+          <p>Avatar parlant, montage vidéo, podcast, carte mentale et présentation interactive.</p>
+          <span class="module-foot">
+            <span class="chips"><span class="chip">Résumé</span><span class="chip">Carte</span><span class="chip">Podcast</span><span class="chip">Vidéo</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </span>
+        </a>
+        <a class="module-card" data-module="dev" href="developpement/python.html">
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></span>
+          <span class="eyebrow">Développement</span>
+          <h3>Python</h3>
+          <p>Variables, conditions, boucles, fonctions et 3 mini-projets commentés.</p>
+          <span class="module-foot">
+            <span class="chips"><span class="chip">Résumé</span><span class="chip">Carte</span><span class="chip">Podcast</span><span class="chip">Vidéo</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </span>
+        </a>
+        <a class="module-card" data-module="dev" href="developpement/langage-c.html">
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M12 15h5"/></svg></span>
+          <span class="eyebrow">Développement</span>
+          <h3>Langage C</h3>
+          <p>Types, tableaux, fonctions, pointeurs et comparatif Python / C.</p>
+          <span class="module-foot">
+            <span class="chips"><span class="chip">Résumé</span><span class="chip">Carte</span><span class="chip">Podcast</span><span class="chip">Vidéo</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </span>
+        </a>
+        <a class="module-card" data-module="dev" href="developpement/algorithmique.html">
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v4M5 17v-3h14v3"/></svg></span>
+          <span class="eyebrow">Développement</span>
+          <h3>Algorithmique</h3>
+          <p>Maximum, recherche dichotomique, tris — avec animation interactive.</p>
+          <span class="module-foot">
+            <span class="chips"><span class="chip">Résumé</span><span class="chip">Carte</span><span class="chip">Podcast</span><span class="chip">Vidéo</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </span>
+        </a>
+        <a class="module-card" data-module="sys" href="systemes/systemes-exploitation.html">
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+          <span class="eyebrow">Systèmes</span>
+          <h3>Systèmes d'exploitation</h3>
+          <p>Processus, mémoire, fichiers, comparatif des OS et commandes essentielles.</p>
+          <span class="module-foot">
+            <span class="chips"><span class="chip">Résumé</span><span class="chip">Carte</span><span class="chip">Podcast</span><span class="chip">Vidéo</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </span>
+        </a>
+        <a class="module-card" data-module="sys" href="systemes/architecture-electronique.html">
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span>
+          <span class="eyebrow">Systèmes</span>
+          <h3>Architecture &amp; électronique</h3>
+          <p>Von Neumann, binaire / hexadécimal et simulateur de portes logiques.</p>
+          <span class="module-foot">
+            <span class="chips"><span class="chip">Résumé</span><span class="chip">Carte</span><span class="chip">Podcast</span><span class="chip">Vidéo</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </span>
+        </a>
+        <a class="module-card" data-module="web" href="web/developpement-web.html">
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+          <span class="eyebrow">Développement web</span>
+          <h3>HTML, CSS, JavaScript</h3>
+          <p>Comment ce site est construit : structure, style responsive et interactivité.</p>
+          <span class="module-foot">
+            <span class="chips"><span class="chip">Résumé</span><span class="chip">Carte</span><span class="chip">Podcast</span><span class="chip">Vidéo</span></span>
+            <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="grid-2" style="align-items:start;gap:2rem">
+        <div>
+          <p class="eyebrow">Le projet</p>
+          <h2>Ce que contient chaque fiche</h2>
+          <p class="lead" style="font-size:1rem">Ce portfolio valide mes acquis par des productions concrètes et variées — texte, image, audio, vidéo et code — en utilisant l'IA de manière responsable et transparente.</p>
+          <div class="grid-2" style="margin-top:1.5rem">
+        <div class="feature"><span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span><div><strong>Résumés de cours</strong><p>Les notions clés de chaque unité, rédigées et vérifiées.</p></div></div>
+        <div class="feature"><span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="5" r="2"/><circle cx="20" cy="5" r="2"/><circle cx="4" cy="19" r="2"/><circle cx="20" cy="19" r="2"/><path d="M6 6l4 4M18 6l-4 4M6 18l4-4M18 18l-4-4"/></svg></span><div><strong>Cartes mentales</strong><p>Interactives : survolez une branche pour la mettre en évidence.</p></div></div>
+        <div class="feature"><span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="2" y="14" width="5" height="7" rx="2"/><rect x="17" y="14" width="5" height="7" rx="2"/></svg></span><div><strong>Podcasts et vocaux</strong><p>Générés avec Google Cloud Text-to-Speech à partir des résumés.</p></div></div>
+        <div class="feature"><span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg></span><div><strong>Vidéos explicatives</strong><p>Avatar parlant, montage CapCut et diapositives commentées.</p></div></div>
+        <div class="feature"><span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></span><div><strong>Quiz de révision</strong><p>Corrigés instantanément pour vérifier ses acquis.</p></div></div>
+        <div class="feature"><span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 14h.01M15 14h.01M2 13v2M22 13v2"/></svg></span><div><strong>Transparence IA</strong><p>Les outils utilisés et la part de travail personnel, page par page.</p></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Parcours du semestre</h3>
+          <ol class="timeline">
+            <li><b>Mise en place</b><span>GitHub, dépôt et site en ligne</span></li>
+            <li><b>Digital Skills</b><span>Cybersécurité, prompt engineering, création de contenu</span></li>
+            <li><b>Développement</b><span>Python, langage C, algorithmique</span></li>
+            <li><b>Systèmes et fondements</b><span>Systèmes d'exploitation, architecture, électronique</span></li>
+            <li><b>Développement web</b><span>Finalisation du site et présentation orale</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-head"><div><p class="eyebrow">Méthode</p><h2>Outils utilisés</h2></div></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Besoin</th><th>Outils</th></tr></thead>
+          <tbody>
+            <tr><td>Rédaction, explication, correction de code</td><td>Claude, ChatGPT, Grok</td></tr>
+            <tr><td>Recherche avec sources</td><td>Perplexity</td></tr>
+            <tr><td>Résumés, podcasts, cartes mentales</td><td>NotebookLM, Google Cloud Text-to-Speech</td></tr>
+            <tr><td>Présentations et visuels</td><td>PowerPoint, Gamma, Canva</td></tr>
+            <tr><td>Vidéo</td><td>CapCut, HeyGen</td></tr>
+            <tr><td>Code et hébergement</td><td>VS Code, Git, GitHub Pages</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="home-section">
+    <section class="block card classroom-box" id="classroom">
+      <div class="classroom-text">
+        <span class="classroom-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" fill="#188038"/><rect x="4" y="6" width="16" height="12" fill="#fff"/><circle cx="12" cy="10" r="2" fill="#188038"/><path d="M8 16c0-2 1.8-3 4-3s4 1 4 3" fill="#188038"/><rect x="14" y="17" width="5" height="1.5" fill="#fbbc04"/></svg></span>
+        <div>
+          <h2>Google Classroom</h2>
+          <p>Toutes les fiches de ce portfolio se partagent dans la classe en un clic (bouton présent sur chaque page).</p>
+        </div>
+      </div>
+      <div class="btn-row" style="margin:0">
+        <a class="btn btn-classroom" data-classroom-share href="https://classroom.google.com/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>Partager sur Classroom</a>
+        <!-- Remplacer par le lien de la classe : https://classroom.google.com/c/XXXXXXXX -->
+        <a class="btn btn-ghost" href="https://classroom.google.com/" target="_blank" rel="noopener">Ouvrir la classe</a>
+      </div>
+    </section>
+    </div>
+
+    <section class="transparence">
+      <h2><span class="h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 14h.01M15 14h.01M2 13v2M22 13v2"/></svg></span>Transparence IA</h2>
+      <dl>
+        <dt>Outils utilisés</dt><dd>Claude (structure du site, premiers jets des textes), Google Cloud Text-to-Speech (audio).</dd>
+        <dt>Rôle de l'IA</dt><dd>Proposer la structure HTML/CSS/JS et un premier résumé de chaque cours.</dd>
+        <dt>Ce que j'ai fait moi-même</dt><dd>Relecture, correction des résumés à partir de mes cours, choix du design, ajout de mes productions. <em>[à compléter]</em></dd>
+        <dt>Sources vérifiées</dt><dd>Supports de cours de l'établissement. <em>[à compléter]</em></dd>
+      </dl>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">S</span><span>Soulaima</span></a>
+        <p>Portfolio numérique de 1ère année : résumés de cours, cartes mentales, podcasts et vidéos explicatives.</p>
+      </div>
+      <div>
+        <h4>Digital Skills</h4>
+        <ul>
+          <li><a href="digital-skills/cybersecurite.html">Cybersécurité</a></li>
+          <li><a href="digital-skills/prompt-engineering.html">Prompt engineering</a></li>
+          <li><a href="digital-skills/creation-contenu.html">Création de contenu</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Développement</h4>
+        <ul>
+          <li><a href="developpement/python.html">Python</a></li>
+          <li><a href="developpement/langage-c.html">Langage C</a></li>
+          <li><a href="developpement/algorithmique.html">Algorithmique</a></li>
+          <li><a href="web/developpement-web.html">Développement web</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Systèmes</h4>
+        <ul>
+          <li><a href="systemes/systemes-exploitation.html">Systèmes d'exploitation</a></li>
+          <li><a href="systemes/architecture-electronique.html">Architecture &amp; électronique</a></li>
+          <li><a href="index.html#classroom">Google Classroom</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Soulaima — Tous droits réservés.</span>
+      <span>HTML · CSS · JavaScript — hébergé sur GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
