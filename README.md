@@ -1,6 +1,6 @@
 # Portfolio numérique — Soulaima
 
-**Étudiante :** Soulaima — 1ère année, *[filière à compléter]*
+**Étudiante :** Soulaima — 1ère année, Technologie de l'Informatique — ISET Nabeul
 **Site en ligne :** `https://<utilisateur>.github.io/portfolio-numerique/` *(à compléter après publication)*
 
 ## Objectif du projet
@@ -52,7 +52,14 @@ portfolio-numerique/
 **Vidéos** : chaque page affiche pour l'instant 3 vidéos YouTube en français, choisies pour le module (lecteur + playlist cliquable). Ce sont des vidéos d'autres créateurs, intégrées avec le lecteur officiel YouTube, en attendant mes propres vidéos.
 Pour mettre ma vidéo : dépose `medias/videos/<page>.mp4` (par ex. `python.mp4`). Elle remplace automatiquement la vidéo YouTube dans le lecteur principal. Pour utiliser ma propre vidéo YouTube, change `data-youtube="IDENTIFIANT"` sur l'élément `#main-video`. GitHub refuse les fichiers de plus de 100 Mo : au-delà, passe par YouTube.
 
-**Podcasts et vocaux (Google Cloud Text-to-Speech)**
+**Podcasts et vocaux** : les 18 fichiers de `medias/audio/` (un podcast à deux voix et un vocal par module) ont été générés à partir des résumés avec des voix neuronales françaises (Denise et Henri, via `edge-tts`) :
+```powershell
+pip install edge-tts
+python outils/generer_audio.py --moteur edge
+```
+À relancer après chaque modification d'un résumé.
+
+**Variante avec Google Cloud Text-to-Speech**
 
 1. Dans la console Google Cloud, active l'API *Cloud Text-to-Speech* et crée une clé API.
 2. Dans PowerShell, à la racine du site :
@@ -82,7 +89,7 @@ Ensuite, sur GitHub : *Settings → Pages → Branch : main → / (root) → Sav
 
 ## Outils utilisés
 
-Claude, ChatGPT, Perplexity, NotebookLM, Google Cloud Text-to-Speech, Canva, Gamma, CapCut, HeyGen, VS Code, Git, GitHub Pages.
+Claude, ChatGPT, Perplexity, NotebookLM, edge-tts (synthèse vocale), Canva, Gamma, CapCut, HeyGen, VS Code, Git, GitHub Pages.
 
 ## Transparence IA
 
