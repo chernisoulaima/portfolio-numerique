@@ -395,6 +395,26 @@ tbody tr:hover { background: color-mix(in srgb, var(--accent) 5%, transparent); 
 .play-icon svg { width: 20px; height: 20px; margin-left: 3px; }
 audio { width: 100%; height: 40px; }
 
+/* Script vidéo */
+.script-box { margin-top: 1.2rem; padding: 0; overflow: hidden; }
+.script-box summary { display: flex; align-items: center; gap: .8rem; padding: 1.1rem 1.4rem; cursor: pointer; list-style: none; }
+.script-box summary::-webkit-details-marker { display: none; }
+.script-box summary::after { content: ""; margin-left: auto; width: 9px; height: 9px; border-right: 2px solid var(--ink-mute); border-bottom: 2px solid var(--ink-mute); transform: rotate(45deg); transition: transform .2s; }
+.script-box[open] summary::after { transform: rotate(-135deg); }
+.script-box summary .h-icon { margin: 0; }
+.script-box summary b { display: block; font-family: var(--font-title); font-size: 1.05rem; }
+.script-box summary small { display: block; font-size: .8rem; color: var(--ink-mute); }
+.script-box summary:hover { background: var(--surface-2); }
+.script-intro { margin: 0 1.4rem 1rem; font-size: .9rem; color: var(--ink-soft); }
+.script-plans { list-style: none; margin: 0 1.4rem; padding: 0 0 0 1.4rem; border-left: 2px solid var(--line); display: grid; gap: 1rem; }
+.script-plans li { position: relative; }
+.script-plans li::before { content: ""; position: absolute; left: calc(-1.4rem - 6px); top: .45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--mod, var(--accent)); box-shadow: 0 0 0 4px var(--surface); }
+.plan-label { display: flex; gap: .6rem; align-items: baseline; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+.plan-label b { color: var(--mod, var(--accent)); }
+.plan-label time { font-family: var(--font-mono); color: var(--ink-mute); }
+.script-plans p { margin: .25rem 0 0; font-size: .96rem; line-height: 1.65; }
+.copy-script { margin: 1.2rem 1.4rem 1.4rem; }
+
 /* Captures et illustrations */
 .shot { margin: .6rem 0 0; }
 .shot img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--navy); }

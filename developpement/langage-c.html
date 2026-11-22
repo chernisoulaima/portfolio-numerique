@@ -202,7 +202,6 @@ int main(void) {
           <div class="video-frame" id="main-video" data-youtube="iVK2YIhi6lE" data-video="../medias/videos/langage-c.mp4" data-title="Vidéo : Langage C">
             <span><span class="play-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20"/></svg></span>Chargement de la vidéo…</span>
           </div>
-          <p class="video-script"><strong>Script de ma vidéo :</strong> « Le C, c'est parler presque directement à la machine. Je présente trois programmes — conditions, tableaux et pointeurs — et je compare le C à Python. »</p>
         </div>
         <aside class="video-list" aria-label="Autres vidéos">
           <p class="video-list-title">Vidéos recommandées</p>
@@ -223,6 +222,21 @@ int main(void) {
           <p class="video-note">Vidéos YouTube sélectionnées pour approfondir le cours. Cliquez sur une vidéo pour la lancer.</p>
         </aside>
       </div>
+      <details class="card script-box" id="script">
+        <summary>
+          <span class="h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+          <span><b>Mon script vidéo</b><small>5 plans · 134 mots · environ 1 minute</small></span>
+        </summary>
+        <p class="script-intro">Le texte de ma propre vidéo explicative, écrit et relu par moi, découpé plan par plan. Il sert de narration pour l'enregistrement et de script pour l'avatar HeyGen.</p>
+        <ol class="script-plans">
+          <li><span class="plan-label"><b>Accroche</b><time>0:00</time></span><p>Le langage C, c&#x27;est parler presque directement à la machine. Plus exigeant que Python, mais tellement formateur ! Voici ce que j&#x27;ai appris.</p></li>
+          <li><span class="plan-label"><b>Idée 1</b><time>0:08</time></span><p>En C, on compile avant d&#x27;exécuter, avec GCC. Chaque variable a un type déclaré : int, float, char. Et chaque instruction se termine par un point-virgule.</p></li>
+          <li><span class="plan-label"><b>Idée 2</b><time>0:22</time></span><p>Les tableaux ont une taille fixe et leurs indices vont de zéro à n moins un. J&#x27;ai écrit des fonctions qui calculent la moyenne et le maximum de cinq notes.</p></li>
+          <li><span class="plan-label"><b>Idée 3</b><time>0:36</time></span><p>Et la grande notion : les pointeurs. Un pointeur contient l&#x27;adresse d&#x27;une variable. Grâce à lui, ma fonction « échanger » modifie vraiment les deux variables du programme principal.</p></li>
+          <li><span class="plan-label"><b>Conclusion</b><time>0:50</time></span><p>Python est plus simple, le C est plus rapide et plus proche du matériel. Les deux se complètent, et le tableau comparatif est sur ma page.</p></li>
+        </ol>
+        <button class="btn btn-ghost copy-script" type="button">Copier le script</button>
+      </details>
       <div class="media-grid" style="margin-top:1.2rem">
         <article class="media-card">
           <h3><span class="h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="2" y="14" width="5" height="7" rx="2"/><rect x="17" y="14" width="5" height="7" rx="2"/></svg></span>Podcast</h3>

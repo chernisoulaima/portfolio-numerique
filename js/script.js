@@ -327,6 +327,17 @@
     wrap.appendChild(b);
   });
 
+  /* ---------- 8b. Copier le script vidéo ---------- */
+  $$(".copy-script").forEach(b => b.addEventListener("click", async () => {
+    const box = b.closest(".script-box");
+    const txt = $$(".script-plans li", box).map(li => {
+      const label = li.querySelector(".plan-label").innerText.replace(/\s+/g, " ").trim();
+      return `[${label}]\n${li.querySelector("p").innerText}`;
+    }).join("\n\n");
+    try { await navigator.clipboard.writeText(txt); toast("Script copié"); }
+    catch (e) { toast("Copie impossible : sélectionne le texte à la main"); }
+  }));
+
   /* ---------- 9. Audios : message si le fichier n'existe pas encore ---------- */
   $$("audio[data-src]").forEach(a => {
     const msg = a.nextElementSibling && a.nextElementSibling.classList.contains("media-missing") ? a.nextElementSibling : null;
