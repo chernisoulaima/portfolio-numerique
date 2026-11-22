@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompt engineering — Soulaima</title>
+  <meta name="description" content="Apprendre à formuler des demandes précises pour obtenir de meilleurs résultats d'une IA : rôle, contexte, tâche, format, contraintes et exemples.">
+  <meta name="theme-color" content="#0b1b34">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>try{var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body data-module="digital">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">S</span><span>Soulaima<small>Portfolio numérique</small></span></a>
+    <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li class="nav-group"><span tabindex="0">Digital Skills</span>
+          <ul>
+            <li><a href="../digital-skills/cybersecurite.html">Cybersécurité</a></li>
+            <li><a href="../digital-skills/prompt-engineering.html">Prompt engineering</a></li>
+            <li><a href="../digital-skills/creation-contenu.html">Création de contenu</a></li>
+          </ul>
+        </li>
+        <li class="nav-group"><span tabindex="0">Développement</span>
+          <ul>
+            <li><a href="../developpement/python.html">Python</a></li>
+            <li><a href="../developpement/langage-c.html">Langage C</a></li>
+            <li><a href="../developpement/algorithmique.html">Algorithmique</a></li>
+          </ul>
+        </li>
+        <li class="nav-group"><span tabindex="0">Systèmes</span>
+          <ul>
+            <li><a href="../systemes/systemes-exploitation.html">Systèmes d'exploitation</a></li>
+            <li><a href="../systemes/architecture-electronique.html">Architecture &amp; électronique</a></li>
+          </ul>
+        </li>
+        <li><a href="../web/developpement-web.html">Web</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Activer le mode sombre"></button>
+    <button id="menu-toggle" class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu"></button>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">Accueil</a> / <a href="../index.html#modules">Modules</a> / Prompt engineering</p>
+      <p class="eyebrow">Digital Skills · Chapitre 2</p>
+      <h1>Prompt engineering</h1>
+      <p class="lead">Apprendre à formuler des demandes précises pour obtenir de meilleurs résultats d'une IA : rôle, contexte, tâche, format, contraintes et exemples.</p>
+      <ul class="tags"><li class="tag">Rôle</li><li class="tag">Contexte</li><li class="tag">Format</li><li class="tag">Itération</li><li class="tag">Claude</li><li class="tag">ChatGPT</li><li class="tag">Perplexity</li></ul>
+    </div>
+  </section>
+
+  <div class="container page-layout">
+    <nav class="toc" aria-label="Sommaire de la page"><span class="toc-title">Sur cette page</span><a href="#resume">Résumé</a><a href="#carte">Carte mentale</a><a href="#production">3 cas pratiques et bibliothèque de prompts</a><a href="#medias">Vidéo & podcast</a><a href="#quiz">Quiz</a><a href="#classroom">Classroom</a><a href="#transparence">Transparence IA</a></nav>
+    <div>
+    <section class="block card" id="resume">
+      <h2><span class="h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>Résumé du cours</h2>
+
+      <h3>1. Les 6 éléments d'un bon prompt</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Élément</th><th>Question à se poser</th><th>Exemple</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Rôle</strong></td><td>Qui doit répondre ?</td><td>« Tu es un professeur de C patient… »</td></tr>
+          <tr><td><strong>Contexte</strong></td><td>Quelle est la situation ?</td><td>« Je suis en 1ère année, j'ai un examen lundi. »</td></tr>
+          <tr><td><strong>Tâche</strong></td><td>Que faut-il faire exactement ?</td><td>« Explique les pointeurs. »</td></tr>
+          <tr><td><strong>Format de sortie</strong></td><td>Sous quelle forme ?</td><td>« Un tableau puis 3 exercices. »</td></tr>
+          <tr><td><strong>Contraintes</strong></td><td>Quelles limites ?</td><td>« 200 mots maximum, sans jargon. »</td></tr>
+          <tr><td><strong>Exemples</strong></td><td>À quoi ressemble un bon résultat ?</td><td>« Voici un exercice du même style : … »</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>2. Les techniques</h3>
+      <ul>
+        <li><strong>Raisonnement étape par étape</strong> : demander à l'IA de détailler ses étapes réduit les erreurs de logique.</li>
+        <li><strong>Fournir des exemples</strong> (few-shot) : l'IA imite le style et le niveau attendus.</li>
+        <li><strong>Itérer et affiner</strong> : le premier résultat est un brouillon ; on corrige le prompt selon ce qui manque.</li>
+        <li><strong>Demander une vérification</strong> : « Relis ta réponse et signale ce dont tu n'es pas sûr. »</li>
+      </ul>
+
+      <h3>3. Comparer les outils</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Outil</th><th>Point fort</th><th>À surveiller</th></tr></thead>
+        <tbody>
+          <tr><td>Claude</td><td>Explications structurées, textes longs, code</td><td>Vérifier les faits récents</td></tr>
+          <tr><td>ChatGPT</td><td>Polyvalent, nombreux formats</td><td>Peut inventer des sources</td></tr>
+          <tr><td>Grok</td><td>Actualité et ton direct</td><td>Style parfois peu académique</td></tr>
+          <tr><td>Perplexity</td><td>Réponses avec sources citées</td><td>Toujours ouvrir les sources</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note">Règle d'or : l'IA est un assistant, pas un remplaçant. Je dois pouvoir expliquer chaque phrase que je publie.</p>
+
+    </section>
+
+    <section class="block" id="carte">
+      <h2><span class="h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="5" r="2"/><circle cx="20" cy="5" r="2"/><circle cx="4" cy="19" r="2"/><circle cx="20" cy="19" r="2"/><path d="M6 6l4 4M18 6l-4 4M6 18l4-4M18 18l-4-4"/></svg></span>Carte mentale</h2>
+      <figure class="mindmap">
+        <div class="mindmap-scroll"></div>
+        <script type="application/json">{"centre": "Prompt engineering", "branches": [{"nom": "Structure", "items": ["Rôle", "Contexte", "Tâche", "Format", "Contraintes", "Exemples"]}, {"nom": "Techniques", "items": ["Étape par étape", "Few-shot", "Itérer", "Vérifier"]}, {"nom": "Outils", "items": ["Claude", "ChatGPT", "Grok", "Perplexity"]}, {"nom": "Éthique", "items": ["Citer l'IA", "Vérifier les faits", "Pas de données perso"]}, {"nom": "Usages", "items": ["Réviser", "Comprendre une erreur", "Résumer"]}]}</script>
+        <figcaption>Survolez (ou sélectionnez au clavier) une branche pour la mettre en évidence. Sur téléphone, faites défiler horizontalement.</figcaption>
+      </figure>
+    </section>
+
+    <section class="block" id="production">
+      <h2><span class="h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 6 6 .9-4.5 4.3 1 6.3L12 16.6 6.5 19.5l1-6.3L3 8.9 9 8z"/></svg></span>3 cas pratiques et bibliothèque de prompts</h2>
+
+      <article class="card prompt-case">
+        <h3 style="margin-top:0">Cas 1 — Comprendre les pointeurs en C</h3>
+        <div class="prompt-step"><strong class="prompt-weak">Prompt initial (faible)</strong><div><pre><code>Explique les pointeurs.</code></pre></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Une définition générale et abstraite, avec un exemple trop avancé (pointeurs de fonctions). <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas1-avant.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong class="prompt-good">Prompt amélioré</strong><div><pre data-copy><code>Tu es un professeur de langage C patient.
+Je suis étudiante en 1ère année et je bloque sur les pointeurs.
+Explique ce qu'est un pointeur en 3 étapes :
+1) une analogie de la vie courante,
+2) un exemple de code C de 10 lignes maximum, commenté ligne par ligne,
+3) deux erreurs fréquentes à éviter.
+Utilise un vocabulaire simple et termine par une question pour vérifier que j'ai compris.</code></pre></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Une analogie (l'adresse d'une maison), un code court avec <code>&amp;</code> et <code>*</code> commenté, les erreurs « pointeur non initialisé » et « oubli de * ». <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas1-apres.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong>Analyse</strong><div>Le rôle et le contexte ont adapté le niveau ; le format en 3 étapes a rendu la réponse structurée ; la contrainte « 10 lignes » a évité un exemple trop complexe.</div></div>
+      </article>
+      <article class="card prompt-case">
+        <h3 style="margin-top:0">Cas 2 — Préparer une fiche de révision</h3>
+        <div class="prompt-step"><strong class="prompt-weak">Prompt initial (faible)</strong><div><pre><code>Fais-moi une fiche sur les systèmes d'exploitation.</code></pre></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Un long texte sans hiérarchie, difficile à réviser. <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas2-avant.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong class="prompt-good">Prompt amélioré</strong><div><pre data-copy><code>Rôle : tu es un tuteur qui prépare des fiches de révision.
+Contexte : examen de 1ère année sur les systèmes d'exploitation.
+Tâche : rédige une fiche sur les 4 rôles d'un OS (processus, mémoire, fichiers, périphériques).
+Format : un tableau (rôle | définition | exemple concret), puis 5 questions de type QCM avec la correction à la fin.
+Contraintes : une page maximum, définitions de 2 lignes.</code></pre></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Un tableau clair de 4 lignes et un QCM corrigé, directement utilisable. <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas2-apres.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong>Analyse</strong><div>Préciser le format (tableau + QCM) a transformé un texte en outil de révision. Mettre la correction à la fin permet de s'auto-tester.</div></div>
+      </article>
+      <article class="card prompt-case">
+        <h3 style="margin-top:0">Cas 3 — Comparer les outils sur une recherche sourcée</h3>
+        <div class="prompt-step"><strong class="prompt-weak">Prompt initial (faible)</strong><div><pre><code>C'est quoi le phishing ?</code></pre></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Claude et ChatGPT : définition correcte mais sans source. Perplexity : définition avec liens. <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas3-avant.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong class="prompt-good">Prompt amélioré</strong><div><pre data-copy><code>Explique ce qu'est l'hameçonnage (phishing) pour un public étudiant.
+Donne 3 exemples concrets récents, et pour chaque affirmation cite une source officielle (ANSSI, Cybermalveillance.gouv.fr).
+Si tu n'es pas certain d'une information, dis-le explicitement.</code></pre></div></div>
+        <div class="prompt-step"><strong>Résultat obtenu</strong><div>Perplexity fournit les liens officiels ; Claude signale ce qu'il ne peut pas vérifier ; ChatGPT donne des exemples mais une source était invalide → vérifiée et retirée. <p class="note note-todo">📸 Ajoute ta capture d'écran : <code>&lt;img src="../medias/images/prompt-cas3-apres.png" alt="Résultat du prompt"&gt;</code></p></div></div>
+        <div class="prompt-step"><strong>Analyse</strong><div>Demander des sources et l'aveu d'incertitude rend les erreurs visibles. Comparer plusieurs outils montre qu'il faut toujours vérifier soi-même.</div></div>
+      </article>
+      <h3>Bibliothèque de prompts réutilisables</h3>
+      <div class="grid-2">
+        <div><strong>1. Expliquer une notion</strong><pre data-copy><code>Tu es un professeur patient. Explique [NOTION] à une étudiante de 1ère année avec une analogie, un exemple simple et 2 erreurs fréquentes. 150 mots maximum.</code></pre></div>
+        <div><strong>2. Comprendre une erreur de code</strong><pre data-copy><code>Voici mon code [LANGAGE] et le message d'erreur. Ne me donne pas la correction directement : explique d'abord la cause, puis donne-moi un indice.
+[CODE]
+[ERREUR]</code></pre></div>
+        <div><strong>3. Fiche de révision</strong><pre data-copy><code>À partir de ce cours, crée une fiche de révision : tableau des notions clés (notion | définition | exemple), puis 5 questions QCM corrigées à la fin.
+[COURS]</code></pre></div>
+        <div><strong>4. Quiz d'entraînement</strong><pre data-copy><code>Pose-moi 5 questions sur [SUJET], une par une. Attends ma réponse avant de corriger et d'expliquer.</code></pre></div>
+        <div><strong>5. Vérifier un texte</strong><pre data-copy><code>Relis ce texte : corrige l'orthographe, signale les affirmations qui mériteraient une source et propose une version plus claire sans changer le sens.
+[TEXTE]</code></pre></div>
+      </div>
+
+    </section>
+
+    <section class="block" id="medias">
+      <h2><span class="h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"/></svg></span>Vidéo, podcast et vocal</h2>
+      <div class="card video-panel">
+        <div class="video-main">
+          <div class="video-frame" id="main-video" data-youtube="ulvp6w7y8UY" data-video="../medias/videos/prompt-engineering.mp4" data-title="Vidéo : Prompt engineering">
+            <span><span class="play-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20"/></svg></span>Vidéo à venir</span>
+          </div>
+          <p class="video-script"><strong>Script de ma future vidéo :</strong> « Un prompt flou donne une réponse floue. Je compare trois prompts avant / après et je montre comment le rôle, le contexte et le format changent complètement la réponse de l'IA. »</p>
+        </div>
+        <aside class="video-list" aria-label="Autres vidéos">
+          <p class="video-list-title">Vidéos recommandées</p>
+          <ul>
+            <li><button class="yt-item active" type="button" data-id="ulvp6w7y8UY" aria-pressed="true">
+              <img src="https://i.ytimg.com/vi/ulvp6w7y8UY/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+              <span><b>IA : comment faire un prompt efficace ?</b><small>Microsoft ExpertZone France · 5:22</small></span>
+            </button></li>
+            <li><button class="yt-item" type="button" data-id="H89bSRvuY14" aria-pressed="false">
+              <img src="https://i.ytimg.com/vi/H89bSRvuY14/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+              <span><b>Formation au Prompt Engineering : le guide</b><small>L&#x27;Académie Hostinger · 7:57</small></span>
+            </button></li>
+            <li><button class="yt-item" type="button" data-id="hmAhMMpSK_A" aria-pressed="false">
+              <img src="https://i.ytimg.com/vi/hmAhMMpSK_A/mqdefault.jpg" alt="" loading="lazy" width="120" height="68">
+              <span><b>Écrire des prompts parfaits (tuto prompt engineering)</b><small>NOFLOW · 7:07</small></span>
+            </button></li>
+          </ul>
+          <p class="video-note">Vidéos YouTube sélectionnées en attendant mes propres vidéos. Dès que <code>medias/videos/prompt-engineering.mp4</code> sera ajoutée, elle remplacera automatiquement le lecteur.</p>
+        </aside>
+      </div>
+      <div class="media-grid" style="margin-top:1.2rem">
+        <article class="media-card">
+          <h3><span class="h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/><rect x="2" y="14" width="5" height="7" rx="2"/><rect x="17" y="14" width="5" height="7" rx="2"/></svg></span>Podcast</h3>
+          <audio controls preload="metadata" data-src="../medias/audio/prompt-engineering-podcast.mp3"></audio>
+          <p class="media-missing" hidden>Podcast pas encore généré — lancer <code>outils/generer_audio.py</code> (Google Cloud Text-to-Speech).</p>
+          <p>Épisode à deux voix : une animatrice présente chaque partie, une seconde voix explique le contenu du résumé.</p>
+        </article>
+        <article class="media-card">
+          <h3><span class="h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5"/></svg></span>Vocal du résumé</h3>
+          <audio controls preload="metadata" data-src="../medias/audio/prompt-engineering-vocal.mp3"></audio>
+          <p class="media-missing" hidden>Vocal pas encore généré. En attendant, écoutez la voix du navigateur :</p>
+          <div class="tts-controls">
+            <button id="tts-play" class="btn" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20"/></svg>Lire le résumé</button>
+            <button id="tts-stop" class="btn btn-ghost" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>Stop</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block card quiz" id="quiz">
+      <h2><span class="h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg></span>Quiz de révision</h2>
+      <script type="application/json">[{"q": "Lequel n'est PAS un des éléments d'un bon prompt ?", "options": ["Le rôle", "Le format de sortie", "La couleur de l'écran"], "answer": 2}, {"q": "Donner un ou deux exemples du résultat attendu s'appelle…", "options": ["le few-shot prompting", "le phishing", "le débogage"], "answer": 0, "explication": "On montre à l'IA le modèle à imiter."}, {"q": "Quel outil est le plus adapté pour obtenir des réponses avec sources ?", "options": ["Perplexity", "CapCut", "Canva"], "answer": 0}, {"q": "Que faire si une IA cite une source ?", "options": ["La copier telle quelle", "L'ouvrir et vérifier qu'elle existe et dit bien ça", "L'ignorer"], "answer": 1, "explication": "Une IA peut inventer des sources : il faut toujours vérifier."}]</script>
+    </section>
+
+    <section class="block card classroom-box" id="classroom">
+      <div class="classroom-text">
+        <span class="classroom-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" fill="#188038"/><rect x="4" y="6" width="16" height="12" fill="#fff"/><circle cx="12" cy="10" r="2" fill="#188038"/><path d="M8 16c0-2 1.8-3 4-3s4 1 4 3" fill="#188038"/><rect x="14" y="17" width="5" height="1.5" fill="#fbbc04"/></svg></span>
+        <div>
+          <h2>Google Classroom</h2>
+          <p>Partagez cette fiche de révision avec la classe.</p>
+        </div>
+      </div>
+      <div class="btn-row" style="margin:0">
+        <a class="btn btn-classroom" data-classroom-share href="https://classroom.google.com/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>Partager sur Classroom</a>
+        <!-- Remplacer par le lien de la classe : https://classroom.google.com/c/XXXXXXXX -->
+        <a class="btn btn-ghost" href="https://classroom.google.com/" target="_blank" rel="noopener">Ouvrir la classe</a>
+      </div>
+    </section>
+
+    <section class="transparence" id="transparence">
+      <h2><span class="h-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 14h.01M15 14h.01M2 13v2M22 13v2"/></svg></span>Transparence IA</h2>
+      <dl>
+        <dt>Outils utilisés</dt><dd>Claude, ChatGPT, Grok, Perplexity (cas pratiques), Google Cloud Text-to-Speech (audio)</dd>
+        <dt>Rôle de l'IA</dt><dd>Premier jet du résumé et de la carte mentale, génération des voix du podcast.</dd>
+        <dt>Ce que j'ai fait moi-même</dt><dd>Relecture et correction à partir de mes notes de cours, choix des exemples, vérification des réponses du quiz. <em>[à compléter]</em></dd>
+        <dt>Sources vérifiées</dt><dd>Support de cours de l'établissement. <em>[à compléter]</em></dd>
+      </dl>
+    </section>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">S</span><span>Soulaima</span></a>
+        <p>Portfolio numérique de 1ère année : résumés de cours, cartes mentales, podcasts et vidéos explicatives.</p>
+      </div>
+      <div>
+        <h4>Digital Skills</h4>
+        <ul>
+          <li><a href="../digital-skills/cybersecurite.html">Cybersécurité</a></li>
+          <li><a href="../digital-skills/prompt-engineering.html">Prompt engineering</a></li>
+          <li><a href="../digital-skills/creation-contenu.html">Création de contenu</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Développement</h4>
+        <ul>
+          <li><a href="../developpement/python.html">Python</a></li>
+          <li><a href="../developpement/langage-c.html">Langage C</a></li>
+          <li><a href="../developpement/algorithmique.html">Algorithmique</a></li>
+          <li><a href="../web/developpement-web.html">Développement web</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Systèmes</h4>
+        <ul>
+          <li><a href="../systemes/systemes-exploitation.html">Systèmes d'exploitation</a></li>
+          <li><a href="../systemes/architecture-electronique.html">Architecture &amp; électronique</a></li>
+          <li><a href="../index.html#classroom">Google Classroom</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Soulaima — Tous droits réservés.</span>
+      <span>HTML · CSS · JavaScript — hébergé sur GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+<script src="../js/script.js"></script>
+</body>
+</html>
