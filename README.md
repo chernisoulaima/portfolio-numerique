@@ -6,7 +6,7 @@
 
 ## Objectif du projet
 
-Ce portfolio présente mes réalisations dans chaque unité d'enseignement du semestre. Pour chaque cours, on trouve un résumé, une carte mentale interactive, un podcast, un vocal, une vidéo explicative et un quiz de révision. Chaque fiche peut être partagée sur Google Classroom.
+Ce portfolio présente mes réalisations dans chaque unité d'enseignement du semestre. Pour chaque cours, on trouve un résumé, une carte mentale interactive, un podcast, un vocal, des vidéos recommandées et un quiz de révision. Chaque fiche peut être partagée sur Google Classroom.
 
 Le site est **statique** : HTML, CSS et JavaScript natifs, sans framework ni étape de compilation. Il est hébergé sur GitHub Pages.
 
@@ -32,7 +32,6 @@ portfolio-numerique/
 ├── web/                       developpement-web
 ├── medias/
 │   ├── audio/                 podcasts et vocaux (MP3)
-│   ├── videos/                vidéos (MP4) — ou YouTube si trop lourdes
 │   ├── images/                captures, infographies
 │   └── pdf/                   présentations exportées
 └── outils/generer_audio.py    génération des audios avec Google Cloud TTS
@@ -50,8 +49,7 @@ portfolio-numerique/
 
 ## Ajouter les médias
 
-**Vidéos** : chaque page affiche pour l'instant 3 vidéos YouTube en français, choisies pour le module (lecteur + playlist cliquable). Ce sont des vidéos d'autres créateurs, intégrées avec le lecteur officiel YouTube, en attendant mes propres vidéos.
-Pour mettre ma vidéo : dépose `medias/videos/<page>.mp4` (par ex. `python.mp4`). Elle remplace automatiquement la vidéo YouTube dans le lecteur principal. Pour utiliser ma propre vidéo YouTube, change `data-youtube="IDENTIFIANT"` sur l'élément `#main-video`. GitHub refuse les fichiers de plus de 100 Mo : au-delà, passe par YouTube.
+**Vidéos recommandées** : chaque module propose une sélection de 3 vidéos YouTube en français (lecteur intégré et playlist cliquable) pour approfondir le cours. Les identifiants des vidéos se trouvent dans l'attribut `data-youtube` et dans les boutons `.yt-item` de chaque page.
 
 **Podcasts et vocaux** : les 18 fichiers de `medias/audio/` (un podcast à deux voix et un vocal par module) ont été générés à partir des résumés avec des voix neuronales françaises (Denise et Henri, via `edge-tts`) :
 ```powershell
@@ -89,7 +87,7 @@ Ensuite, sur GitHub : *Settings → Pages → Branch : main → / (root) → Sav
 
 ## Outils utilisés
 
-Claude, ChatGPT, Perplexity, NotebookLM, edge-tts (synthèse vocale), Canva, Gamma, CapCut, HeyGen, VS Code, Git, GitHub Pages.
+Claude, ChatGPT, Perplexity, NotebookLM, edge-tts (synthèse vocale), Canva, Gamma, YouTube (vidéos recommandées), VS Code, Git, GitHub Pages.
 
 ## Transparence IA
 
