@@ -351,10 +351,23 @@
   });
 
   /* ---------- 10. Vidéos YouTube / fichiers locaux ---------- */
+  // YouTube exige de savoir quel site intègre la vidéo (en-tête Referer), sinon « erreur 153 ».
+  // Une page ouverte en double-cliquant (file://) n'en envoie jamais : on affiche alors
+  // la miniature avec un bouton qui ouvre la vidéo sur YouTube.
+  const CAN_EMBED = /^https?:$/.test(location.protocol);
   function setYouTube(f, id, autoplay) {
     if (!id) return;
-    const q = autoplay ? "?autoplay=1&rel=0" : "?rel=0";
-    f.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}${q}" title="${f.dataset.title || "Vidéo"}" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+    const safeId = encodeURIComponent(id);
+    const title = f.dataset.title || "Vidéo";
+    if (!CAN_EMBED) {
+      f.innerHTML = `<a class="yt-fallback" href="https://www.youtube.com/watch?v=${safeId}" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/${safeId}/hqdefault.jpg" alt="">
+        <span class="play-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20"/></svg></span>
+        <span class="yt-fallback-label">Regarder sur YouTube</span></a>`;
+      return;
+    }
+    const q = (autoplay ? "?autoplay=1&rel=0" : "?rel=0") + "&origin=" + encodeURIComponent(location.origin);
+    f.innerHTML = `<iframe src="https://www.youtube.com/embed/${safeId}${q}" title="${title}" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>`;
   }
   $$(".video-frame[data-youtube]").forEach(f => setYouTube(f, f.dataset.youtube.trim(), false));
 
